@@ -1,0 +1,32 @@
+serviceMonitor:
+  enabled: true
+  namespace: otusapp
+  interval: 30s
+  telemetryPath: /metrics
+  labels:
+    helm.sh/chart: otusapp-chart-0.4.3
+    app.kubernetes.io/name: otusapp-chart
+    app.kubernetes.io/instance: otusapp
+    app.kubernetes.io/version: "0.3.1"
+    app.kubernetes.io/managed-by: Helm
+  timeout: 10s
+
+config:
+  # datasource:
+  #   # Specify one of both datasource or datasourceSecret
+  #   host: (include "postgresql.fullname" .)
+  #   user: otusappdb_user
+  #   # Only one of password and passwordSecret can be specified
+  #   password: otusappdb_password
+  #   # Specify passwordSecret if DB password is stored in secret.
+  #   passwordSecret: {}
+  #   # Secret name
+  #   #  name:
+  #   # Password key inside secret
+  #   #  key:
+  #   port: "5432"
+  #   database: "otusappdb"
+  #   sslmode: disable
+  datasourceSecret:
+    name: otusapp-secret
+    key: SQLALCHEMY_DATABASE_URI

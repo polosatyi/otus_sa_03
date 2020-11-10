@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: otusapp-config
+data:
+  GREETING: {{ .Values.application.greeting }}
+  FLASK_APP: {{ .Values.application.flask_app }}

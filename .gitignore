@@ -1,0 +1,28 @@
+# Distribution / packaging
+*__pycache__*
+*.pyc
+env/
+.coverage
+.coverage.*
+.pytest_cache
+
+# nodejs directories
+node_modules/
+package-lock.json
+
+# IDE
+.idea/
+.vscode/
+
+# temp files
+todo.txt
+todo.md
+temp.txt
+info.txt
+links.md
+check.py
+temp/
+temp
+
+.*.sw[po]
+.DS_Store
